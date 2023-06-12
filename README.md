@@ -54,7 +54,7 @@ Things you may want to cover:
 | category_id    | integer     | null: false                    |
 | situation_id   | integer     | null: false                    |
 | postage_id     | integer     | null: false                    |
-| region_id      | integer     | null: false                    |
+| prefecture_id  | integer     | null: false                    |
 | shipment_id    | integer     | null: false                    |
 | price          | integer     | null: false                    |
 | user           | references  | null: false, foreign_key: true |
@@ -86,7 +86,7 @@ Things you may want to cover:
 | city             | string     | null: false                    |
 | house_number     | string     | null: false                    |
 | building_name    | string     |                                |
-| telephone_number | integer    | null: false                    |
+| telephone_number | string     | null: false                    |
 | order            | references | null: false, foreign_key: true |
 
 ### Association
