@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
-  
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :situation
@@ -15,12 +15,11 @@ class Item < ApplicationRecord
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
     validates :image
   end
-  with_options numericality: { other_than: 1, message: "can't be blank"} do
+  with_options numericality: { other_than: 1, message: "can't be blank" } do
     validates :category_id
     validates :situation_id
     validates :postage_id
     validates :prefecture_id
     validates :shipment_id
   end
-
 end
