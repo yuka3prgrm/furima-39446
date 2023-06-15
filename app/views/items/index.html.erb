@@ -130,9 +130,10 @@
 
     <% if @items.presence %>
       <% @items.each do |item| %>
+        <%= link_to item_path(item.id) do%>
         <li class='list'>
         <div class='item-img-content'>
-          <%=link_to image_tag item.image, class: 'item-img'  %>
+          <%= image_tag item.image, class: 'item-img'  %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
           <%# if @order != "" %>
@@ -155,6 +156,7 @@
           </div>
         </div>
         </li>
+      <% end %>
       <% end %>
     <%# ダミー商品%>
     <% else %>
