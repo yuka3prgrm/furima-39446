@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    binding.pry
   end
   
   def update
