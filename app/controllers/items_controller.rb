@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_prototypes, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :destroy]
   def index
+ 
     @items = Item.all.order("created_at DESC")
   end
 
