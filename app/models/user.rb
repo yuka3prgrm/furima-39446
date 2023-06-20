@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :items
-  has_one :order
+  has_many :order
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

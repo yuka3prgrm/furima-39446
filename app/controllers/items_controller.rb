@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    if @item.order.presence || !(user_signed_in? && current_user.id == @item.user_id) 
+    if @item.order.presence || !(current_user.id == @item.user_id) 
       redirect_to action: :index
     end
   end
