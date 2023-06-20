@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_prototypes, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :destroy]
   def index
+ 
     @items = Item.all.order("created_at DESC")
   end
 
@@ -20,6 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    
   end
 
   def edit
@@ -46,7 +48,7 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in? && current_user.id == @item.user_id
+    if @item.order.presence || !(current_user.id == @item.user_id) 
       redirect_to action: :index
     end
   end
