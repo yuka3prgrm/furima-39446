@@ -26,27 +26,27 @@ RSpec.describe Item, type: :model do
       it 'category_idが空では出品できない' do
         @item.category_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include("Category を入力してください")
       end
       it 'situation_idが空では出品できない' do
         @item.situation_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Situation can't be blank")
+        expect(@item.errors.full_messages).to include("Situation を入力してください")
       end
       it 'postage_idが空では出品できない' do
         @item.postage_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Postage can't be blank")
+        expect(@item.errors.full_messages).to include("Postage を入力してください")
       end
       it 'prefecture_idが空では出品できない' do
         @item.prefecture_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture を入力してください")
       end
       it 'shipment_idが空では出品できない' do
         @item.shipment_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipment can't be blank")
+        expect(@item.errors.full_messages).to include("Shipment を入力してください")
       end
       it 'priceが空では出品できない' do
         @item.price = ''

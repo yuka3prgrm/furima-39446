@@ -32,7 +32,7 @@ RSpec.describe OrderAddress, type: :model do
       it 'prefecture_idが空では出品できない' do
         @order_address.prefecture_id = '1'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@order_address.errors.full_messages).to include("Prefecture を入力してください")
       end
       it 'cityが空では出品できない' do
         @order_address.city = ''
@@ -52,22 +52,22 @@ RSpec.describe OrderAddress, type: :model do
       it 'postal_codeは、「3桁ハイフン4桁」の半角文字列のみ購入可能である' do
         @order_address.postal_code = '1234567'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+        expect(@order_address.errors.full_messages).to include("Postal code が無効です ハイフン(-)を含めて入力してください")
       end
       it 'telephone_numberは10桁以下の数値は購入できない' do
         @order_address.telephone_number = '090123456'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Telephone number is invalid. Input only number")
+        expect(@order_address.errors.full_messages).to include("Telephone number が無効です 半角数字のみ入力してください")
       end
       it 'telephone_numberは12桁以上の数値は購入できない' do
         @order_address.telephone_number = '090123456789'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Telephone number is invalid. Input only number")
+        expect(@order_address.errors.full_messages).to include("Telephone number が無効です 半角数字のみ入力してください")
       end
       it 'telephone_numberは半角数値以外は購入できない' do
         @order_address.telephone_number = '０９０１２３４５６７８'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Telephone number is invalid. Input only number")
+        expect(@order_address.errors.full_messages).to include("Telephone number が無効です 半角数字のみ入力してください")
       end
       it 'itemが紐付いていないと購入できない' do
         @order_address.item_id = nil
