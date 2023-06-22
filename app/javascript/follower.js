@@ -3,7 +3,7 @@ function  pullDown (){
   const pullDownParents = document.getElementById("follower-pull-down")
 
   pullDownButton.addEventListener('mouseover', function(){
-    this.setAttribute("style","background-color:#FFFFFF; font-weight:600;")
+    this.setAttribute("style", "font-weight:600;")
   })
 
   pullDownButton.addEventListener('mouseout', function(){

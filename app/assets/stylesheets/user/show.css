@@ -3,7 +3,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction:row-reverse;
 }
 
 .user-page{
@@ -19,17 +18,23 @@
   z-index: 3;
 }
 
-.followfollower{
-  display: flex;
+.follow{
   justify-content: space-between;
   margin-top: 15px;
+  position: absolute;
+}
+
+.follower{
+  justify-content: space-between;
+  margin-top: 15px;
+  position: absolute;
+  right:0;
 }
 
 
 .hidden{
   display: none;
-
-
+  background-color:#f8f8f8;
 }
 a{
   color: black;
