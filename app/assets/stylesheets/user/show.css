@@ -10,11 +10,13 @@
   position: relative;
   width: 30vw;
   margin-bottom: 100px;
+
 }
 
 .user-contents{
   position: absolute;
   width: 100%;
+  z-index: 3;
 }
 
 .followfollower{
@@ -26,7 +28,7 @@
 
 .hidden{
   display: none;
-  z-index: 9999;
+
 
 }
 a{
