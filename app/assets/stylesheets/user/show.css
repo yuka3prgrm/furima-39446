@@ -1,0 +1,7 @@
+.user-item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction:row-reverse;
+}

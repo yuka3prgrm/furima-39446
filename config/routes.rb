@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :orders, only:[:index, :create] 
   end
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+  end
 end

@@ -1,0 +1,54 @@
+<%= render "shared/header" %>
+<div class="item-show">
+<div class="user-page">
+  <div class="user-contents">
+    <p class="user-name"><%= @user.nickname %></p>
+    <% if current_user != @user %>
+      <% if @user.followed_by?(current_user) %>
+        <%=link_to "フォロー中", user_relationships_path(@user.id),class: "btn" , method: :delete %>
+      <% else %>
+        <%=link_to "フォローする", user_relationships_path(@user.id),class: "btn" ,method: :post %>
+      <% end %>
+    <% end %>
+    <h3>フォロー</h3>
+    <% @user.followings.each do |user| %>
+      <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
+    <% end %>
+    <h3>フォロワー</h3>
+    <% @user.followers.each do |user| %>
+      <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
+    <% end %>
+  </div>
+</div>
+
+  <ul class='user-item-lists'>
+    <% @items.each do |item| %>
+        <%= link_to item_path(item.id) do%>
+        <li class='list'>
+        <div class='item-img-content'>
+          <%= image_tag item.image, class: 'item-img'  %>
+          <% if item.order.presence %>
+          <div class='sold-out'>
+            <span>Sold Out!!</span>
+          </div>
+          <% end %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= item.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= item.price %>円<br><%= item.postage.name %></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<%= render "shared/footer" %>
