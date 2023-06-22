@@ -10,14 +10,22 @@
         <%=link_to "フォローする", user_relationships_path(@user.id),class: "btn" ,method: :post %>
       <% end %>
     <% end %>
-    <h3>フォロー</h3>
-    <% @user.followings.each do |user| %>
-      <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
-    <% end %>
-    <h3>フォロワー</h3>
-    <% @user.followers.each do |user| %>
-      <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
-    <% end %>
+    <div class="followfollower">
+      <div class=follow id="follow">フォロー
+        <ul class="follow-lists hidden" id="follow-pull-down">
+          <% @user.followings.each do |user| %>
+            <li class=“f-user”><%= link_to user.nickname, user_path(user.id) %></li>
+          <% end %>
+         </ul>
+      </div>
+      <div class=follow id="follower">フォロワー
+        <ul class="follower-lists hidden" id="follower-pull-down">
+          <% @user.followers.each do |user| %>        
+            <li class=“f-user”><%= link_to user.nickname, user_path(user.id) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
