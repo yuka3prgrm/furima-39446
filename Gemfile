@@ -35,7 +35,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem"gimei"
-  gem 'rails-i18n'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
 end
@@ -72,3 +71,4 @@ group :development do
 end
 gem 'payjp'
 gem "aws-sdk-s3", require: false
+gem 'rails-i18n'
