@@ -11,14 +11,14 @@
       <% end %>
     <% end %>
     <div class="followfollower">
-      <div class=follow id="follow">フォロー
+      <div class=follow ><div id="follow">フォロー</div>
         <ul class="follow-lists hidden" id="follow-pull-down">
           <% @user.followings.each do |user| %>
             <li class=“f-user”><%= link_to user.nickname, user_path(user.id) %></li>
           <% end %>
          </ul>
       </div>
-      <div class=follower id="follower">フォロワー
+      <div class=follower><div id="follower">フォロワー</div>
         <ul class="follower-lists hidden" id="follower-pull-down">
           <% @user.followers.each do |user| %>        
             <li class=“f-user”><%= link_to user.nickname, user_path(user.id) %></li>

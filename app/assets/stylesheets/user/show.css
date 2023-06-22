@@ -18,16 +18,19 @@
   z-index: 3;
 }
 
-.follow{
+.followfollower{
+  display: flex;
   justify-content: space-between;
+}
+
+.follow{
+  padding: 5px;
   margin-top: 15px;
-  position: absolute;
 }
 
 .follower{
-  justify-content: space-between;
+  padding: 5px;
   margin-top: 15px;
-  position: absolute;
   right:0;
 }
 
@@ -35,6 +38,7 @@
 .hidden{
   display: none;
   background-color:#f8f8f8;
+  padding: 5px;
 }
 a{
   color: black;

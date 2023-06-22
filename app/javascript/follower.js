@@ -17,6 +17,5 @@ function  pullDown (){
       pullDownParents.setAttribute("style", "display:block;")
     }
   });
-
   };
 window.addEventListener('load',  pullDown);
